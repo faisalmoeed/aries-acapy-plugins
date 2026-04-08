@@ -34,8 +34,6 @@ export ALEMBIC_DB_SCHEMA="admin"
 unset ALEMBIC_DB_URL
 unset ALEMBIC_DB_SCHEMA
 
-# Need the authserver endpoint
-TUNNEL_ENDPOINT=${TUNNEL_ENDPOINT:-http://ngrok:4040}
 
 # Get the authserver tunnel public URL using jq
 export TENANT_ISSUER_BASE_URL=$(curl --silent "${TUNNEL_ENDPOINT}/api/tunnels" | jq -r '.tunnels[] | select(.name == "authserver") | .public_url')
