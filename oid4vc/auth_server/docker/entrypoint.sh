@@ -41,7 +41,7 @@ echo "TENANT_ISSUER_BASE_URL: $TENANT_ISSUER_BASE_URL"
 
 # Run Alembic migrations
 echo $PWD
-
+ls -la
 python alembic/admin/migrate.py
 
 # Start Admin API
