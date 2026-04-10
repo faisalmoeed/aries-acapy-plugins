@@ -1,4 +1,3 @@
-## This is the entrypoint script for the auth server Docker container. It performs the following steps:
 #!/bin/bash
 set -e
 
