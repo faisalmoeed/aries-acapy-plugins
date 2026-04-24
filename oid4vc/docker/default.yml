@@ -11,7 +11,7 @@ inbound-transport:
 
 outbound-transport: http
 endpoint:
-  - http://${HOSTNAME}:3000
+  - http://localhost:3000
 
 # plugins
 plugin:
@@ -31,12 +31,12 @@ debug-webhooks: true
 
 # Wallet
 # wallet-name: default
-wallet-name: ${WALLET_NAME}
+wallet-name: ods_base_wallet
 wallet-type: askar
 wallet-storage-type: dpostgres_storage
-wallet-key: ${WALLET_KEY}
-wallet-storage-config: ${WALLET_STORAGE_CONFIG}
-wallet-storage-creds: ${WALLET_STORAGE_CREDS}
+wallet-key: prism_wallet_key
+wallet-storage-config: '{"url":"postgres-db:5432"}'
+wallet-storage-creds: '{"account":"postgres","password":"postgres","admin_account":"postgres","admin_password":"postgres"}'
 
 no-ledger: true
 
