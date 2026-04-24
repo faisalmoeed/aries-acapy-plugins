@@ -38,5 +38,10 @@ COPY oid4vc/ oid4vc/
 ADD https://github.com/openwallet-foundation/acapy-plugins.git#main:status_list/status_list/ status_list/
 COPY docker/*.yml ./
 
+# Set permissions for OpenShift compatibility
+RUN chown -R 1001:root /usr/src/app
+RUN chmod -R g=u /usr/src/app
+USER 1001
+
 ENTRYPOINT ["/bin/bash", "-c", "aca-py \"$@\"", "--"]
 CMD ["start", "--arg-file", "default.yml"]
