@@ -55,20 +55,6 @@ COPY docker/*.yml ./
 RUN chown -R $user:$user /usr/src/app
 RUN chmod -R g=u /usr/src/app
 
-# # Create standard directories for volume mounting and set permissions
-# RUN mkdir -p \
-#     $HOME/.acapy_agent \
-#     $HOME/.cache/pip/http \
-#     $HOME/.indy_client \
-#     $HOME/ledger/sandbox/data \
-#     $HOME/log
-
-# # Set permissions for OpenShift compatibility
-# RUN chown -R 1001:root $HOME/.indy_client $HOME/.acapy_agent && \
-#     chmod -R ug+rw $HOME/log $HOME/ledger $HOME/.acapy_agent $HOME/.cache $HOME/.indy_client
-# RUN chown -R 1001:root /usr/src/app
-# RUN chmod -R g=u /usr/src/app
-
 USER $user
 
 ENTRYPOINT ["/bin/bash", "-c", "aca-py \"$@\"", "--"]

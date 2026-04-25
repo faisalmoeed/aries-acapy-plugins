@@ -19,6 +19,10 @@ endpoint:
 # plugins
 plugin:
   - oid4vc
+  - jwt_vc_json
+  - sd_jwt_vc
+  - mso_mdoc
+  - status_list.v1_0
 
 
 ## Multi-tenancy
@@ -27,10 +31,17 @@ jwt-secret: insecure-jwt-secret
 multitenant-admin: true
 
 # Wallet
-wallet-name: default
+wallet-name: ods_base_wallet
 wallet-type: askar
-wallet-storage-type: default
-wallet-key: "insecure"
+wallet-storage-type: dpostgres_storage
+wallet-key: prism_wallet_key
+wallet-storage-config: '{"url":"postgres-db:5432"}'
+wallet-storage-creds: '{"account":"postgres","password":"postgres","admin_account":"postgres","admin_password":"postgres"}'
+
+# wallet-name: default
+# wallet-type: askar
+# wallet-storage-type: default
+# wallet-key: "insecure"
 
 log-level: info
 
