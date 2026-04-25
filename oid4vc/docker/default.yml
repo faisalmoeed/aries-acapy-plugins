@@ -33,7 +33,7 @@ multitenant-admin: true
 # Wallet
 wallet-name: ods_base_wallet
 wallet-type: askar
-wallet-storage-type: dpostgres_storage
+wallet-storage-type: postgres_storage
 wallet-key: prism_wallet_key
 wallet-storage-config: '{"url":"postgres-db:5432"}'
 wallet-storage-creds: '{"account":"postgres","password":"postgres","admin_account":"postgres","admin_password":"postgres"}'
