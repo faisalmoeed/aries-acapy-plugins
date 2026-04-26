@@ -1,3 +1,4 @@
+## This configuration build for sandbox and development purposes. It is not recommended for production use without further security hardening and configuration adjustments.
 auto-provision: true
 label: oid4vc
 
